@@ -3,8 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
+
 name = "flux-agents"
-version = "0.1.0"
+version = "0.2.0"
 description = "A Python-first Agentic AI Framework — provider-agnostic, async-first, middleware-driven"
 readme = "README.md"
 license = "MIT"
@@ -20,6 +21,11 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
+
+[project.scripts]
+flux = "flux.cli:main"
+flux-agents = "flux.cli:main"
+
 
 [project.optional-dependencies]
 openai = ["openai>=2.0.0"]

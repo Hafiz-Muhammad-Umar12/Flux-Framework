@@ -1,0 +1,205 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║                    Flux Agents Documentation                ║
+# ║          mkdocs.yml — Material for MkDocs Configuration     ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+site_name: Flux Agents
+site_description: A Python-first Agentic AI Framework — provider-agnostic, async-first, middleware-driven
+site_url: https://flux-agents.github.io/flux
+repo_url: https://github.com/Hafiz-Muhammad-Umar12/Flux-Framework
+repo_name: Flux-Framework/flux
+edit_uri: edit/main/docs/
+
+copyright: Copyright &copy; 2024 – 2026 Flux Contributors
+
+theme:
+  name: material
+  language: en
+  logo: assets/images/logo.svg
+  favicon: assets/images/favicon.svg
+  palette:
+    # Dark mode (default)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: amber
+      icon:
+        material: weather-night
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: amber
+      icon:
+        material: weather-sunny
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+    logo: material/robot
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.code.line-highlight
+    - content.tooltips
+    - content.tabs.link
+    - toc.follow
+    - toc.integrate
+
+# extra:
+#   version:
+#     provider: mike
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Hafiz-Muhammad-Umar12/Flux-Framework
+      name: GitHub
+    - icon: fontawesome/brands/python
+      link: https://pypi.org/project/flux-agents/
+      name: PyPI
+    - icon: fontawesome/brands/twitter
+      link: https://x.com/muhaammad_umar_
+      name: Twitter
+
+# analytics:
+#   provider: google
+#   property: G-XXXXXXXXXX
+
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+  # PyMdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      css_class: highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
+      lang:
+        - en
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            show_root_heading: true
+            show_root_full_path: false
+            show_category_heading: true
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            heading_level: 2
+            members_order: source
+            docstring_style: google
+            docstring_section_style: spacy
+            merge_init_into_class: true
+            show_signature_annotations: true
+            separate_signature: true
+            line_length: 80
+            docstring_format: google
+            signature_crossrefs: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Installation: getting-started/installation.md
+      - Quickstart: getting-started/quickstart.md
+      - Your First Agent: getting-started/first-agent.md
+      - Project Structure: getting-started/project-structure.md
+  - Core Concepts:
+      - Agents: core-concepts/agents.md
+      - Tools: core-concepts/tools.md
+      - Providers: core-concepts/providers.md
+      - Sessions: core-concepts/sessions.md
+      - Memory: core-concepts/memory.md
+      - Middleware: core-concepts/middleware.md
+      - Events: core-concepts/events.md
+      - Guardrails: core-concepts/guardrails.md
+      - Handoffs: core-concepts/handoffs.md
+      - Protocols: core-concepts/protocols.md
+  - API Reference:
+      - Agents: api-reference/agents.md
+      - Tools: api-reference/tools.md
+      - Providers: api-reference/providers.md
+      - Sessions: api-reference/sessions.md
+      - Memory: api-reference/memory.md
+      - Middleware: api-reference/middleware.md
+      - Events: api-reference/events.md
+      - Utilities: api-reference/utilities.md
+  - Guides:
+      - Weather Agent: guides/weather-agent.md
+      - Chatbot: guides/chatbot.md
+      - RAG Pipeline: guides/rag.md
+      - Multi-Agent Systems: guides/multi-agent.md
+      - Custom Provider: guides/custom-provider.md
+      - Middleware: guides/middleware.md
+      - Streaming: guides/streaming.md
+  - Examples:
+      - Hello World: examples/hello-world.md
+      - Weather Agent: examples/weather.md
+      - Web Search: examples/search.md
+      - E-Commerce: examples/ecommerce.md
+      - Customer Support: examples/customer-support.md
+  - Deployment:
+      - Docker: deployment/docker.md
+      - Production: deployment/production.md
+      - GitHub Actions: deployment/github-actions.md
+  - Contributing:
+      - Contributing: contributing/contributing.md
+      - Development: contributing/development.md
+      - Architecture: contributing/architecture.md
+  - Changelog: changelog.md

@@ -83,7 +83,6 @@ class AnthropicModel:
         )
 
     async def stream(self, request: ModelRequest) -> AsyncIterator[StreamChunk]:
-        """Stream a response from Anthropic."""
         client = self._get_client()
         params = self._build_params(request)
 
@@ -95,27 +94,11 @@ class AnthropicModel:
 
                 async for event in stream:
                     if event.type == "content_block_start":
-                        if event.content_block.type == "tool_use":
-                            current_tool_id = event.content_block.id
-                            current_tool_name = event.content_block.name
-                            current_tool_args = ""
+                        ...
                     elif event.type == "content_block_delta":
-                        if event.delta.type == "text_delta":
-                            yield StreamChunk(delta_text=event.delta.text)
-                        elif event.delta.type == "input_json_delta":
-                            current_tool_args += event.delta.partial_json
+                        ...
                     elif event.type == "content_block_stop":
-                        if current_tool_name:
-                            yield StreamChunk(
-                                tool_call=ToolCall(
-                                    id=current_tool_id,
-                                    name=current_tool_name,
-                                    arguments=current_tool_args,
-                                )
-                            )
-                            current_tool_name = ""
-                            current_tool_id = ""
-                            current_tool_args = ""
+                        ...
                     elif event.type == "message_stop":
                         final_message = await stream.get_final_message()
                         usage = Usage(
@@ -128,6 +111,9 @@ class AnthropicModel:
                             requests=1,
                         )
                         yield StreamChunk(done=True, usage=usage)
+
+        except Exception as e:
+            raise ProviderError("anthropic", str(e))
 
     def _build_params(self, request: ModelRequest) -> dict[str, Any]:
         """Build Anthropic API parameters."""
