@@ -3102,11 +3102,14 @@
         <p>Run an agent to completion.</p>
 
 
-<table>
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
       <thead>
         <tr>
-          <th><span class="doc-section-title">PARAMETER</span></th>
-          <th><span>DESCRIPTION</span></th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
         </tr>
       </thead>
       <tbody>
@@ -3114,153 +3117,136 @@
             <td>
                 <code>agent</code>
             </td>
-            <td class="doc-param-details">
-              <div class="doc-md-description">
-                <p>The agent to run.</p>
-              </div>
-              <p>
-                  <span class="doc-param-annotation">
-                    <b>TYPE:</b>
-                      <code><a class="autorefs autorefs-internal" title="&lt;code class=&quot;doc-symbol doc-symbol-heading doc-symbol-class&quot;&gt;&lt;/code&gt;            &lt;span class=&quot;doc doc-object-name doc-class-name&quot;&gt;Agent&lt;/span&gt;
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="&lt;code class=&quot;doc-symbol doc-symbol-heading doc-symbol-class&quot;&gt;&lt;/code&gt;            &lt;span class=&quot;doc doc-object-name doc-class-name&quot;&gt;Agent&lt;/span&gt;
 
 
   &lt;span class=&quot;doc doc-labels&quot;&gt;
       &lt;small class=&quot;doc doc-label doc-label-dataclass&quot;&gt;&lt;code&gt;dataclass&lt;/code&gt;&lt;/small&gt;
   &lt;/span&gt; (&lt;code&gt;flux.agent.Agent&lt;/code&gt;)" href="#flux.agent.Agent">Agent</a></code>
-                  </span>
-              </p>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The agent to run.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
             </td>
           </tr>
           <tr class="doc-section-item">
             <td>
                 <code>input</code>
             </td>
-            <td class="doc-param-details">
-              <div class="doc-md-description">
-                <p>User input as string or message list.</p>
-              </div>
-              <p>
-                  <span class="doc-param-annotation">
-                    <b>TYPE:</b>
-                      <code><span title="str">str</span> | <span title="list">list</span>[<a class="autorefs autorefs-internal" title="&lt;code class=&quot;doc-symbol doc-symbol-heading doc-symbol-class&quot;&gt;&lt;/code&gt;            &lt;span class=&quot;doc doc-object-name doc-class-name&quot;&gt;Message&lt;/span&gt;
+            <td>
+                  <code><span title="str">str</span> | <span title="list">list</span>[<a class="autorefs autorefs-internal" title="&lt;code class=&quot;doc-symbol doc-symbol-heading doc-symbol-class&quot;&gt;&lt;/code&gt;            &lt;span class=&quot;doc doc-object-name doc-class-name&quot;&gt;Message&lt;/span&gt;
 
 
   &lt;span class=&quot;doc doc-labels&quot;&gt;
       &lt;small class=&quot;doc doc-label doc-label-dataclass&quot;&gt;&lt;code&gt;dataclass&lt;/code&gt;&lt;/small&gt;
   &lt;/span&gt; (&lt;code&gt;flux.models.base.Message&lt;/code&gt;)" href="../providers/#flux.models.base.Message">Message</a>]</code>
-                  </span>
-              </p>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>User input as string or message list.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
             </td>
           </tr>
           <tr class="doc-section-item">
             <td>
                 <code>context</code>
             </td>
-            <td class="doc-param-details">
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
               <div class="doc-md-description">
                 <p>Optional user context object.</p>
               </div>
-              <p>
-                  <span class="doc-param-annotation">
-                    <b>TYPE:</b>
-                      <code><span title="typing.Any">Any</span></code>
-                  </span>
-                  <span class="doc-param-default">
-                    <b>DEFAULT:</b>
-                      <code>None</code>
-                  </span>
-              </p>
+            </td>
+            <td>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
             <td>
                 <code>config</code>
             </td>
-            <td class="doc-param-details">
-              <div class="doc-md-description">
-                <p>Optional configuration override.</p>
-              </div>
-              <p>
-                  <span class="doc-param-annotation">
-                    <b>TYPE:</b>
-                      <code><a class="autorefs autorefs-internal" title="&lt;code class=&quot;doc-symbol doc-symbol-heading doc-symbol-class&quot;&gt;&lt;/code&gt;            &lt;span class=&quot;doc doc-object-name doc-class-name&quot;&gt;FluxConfig&lt;/span&gt;
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="&lt;code class=&quot;doc-symbol doc-symbol-heading doc-symbol-class&quot;&gt;&lt;/code&gt;            &lt;span class=&quot;doc doc-object-name doc-class-name&quot;&gt;FluxConfig&lt;/span&gt;
 
 
   &lt;span class=&quot;doc doc-labels&quot;&gt;
       &lt;small class=&quot;doc doc-label doc-label-dataclass&quot;&gt;&lt;code&gt;dataclass&lt;/code&gt;&lt;/small&gt;
   &lt;/span&gt; (&lt;code&gt;flux.config.FluxConfig&lt;/code&gt;)" href="../utilities/#flux.config.FluxConfig">FluxConfig</a> | None</code>
-                  </span>
-                  <span class="doc-param-default">
-                    <b>DEFAULT:</b>
-                      <code>None</code>
-                  </span>
-              </p>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Optional configuration override.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
             <td>
                 <code>session</code>
             </td>
-            <td class="doc-param-details">
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
               <div class="doc-md-description">
                 <p>Optional session for conversation persistence.</p>
               </div>
-              <p>
-                  <span class="doc-param-annotation">
-                    <b>TYPE:</b>
-                      <code><span title="typing.Any">Any</span></code>
-                  </span>
-                  <span class="doc-param-default">
-                    <b>DEFAULT:</b>
-                      <code>None</code>
-                  </span>
-              </p>
+            </td>
+            <td>
+                  <code>None</code>
             </td>
           </tr>
           <tr class="doc-section-item">
             <td>
                 <code>model</code>
             </td>
-            <td class="doc-param-details">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="&lt;code class=&quot;doc-symbol doc-symbol-heading doc-symbol-class&quot;&gt;&lt;/code&gt;            &lt;span class=&quot;doc doc-object-name doc-class-name&quot;&gt;Model&lt;/span&gt; (&lt;code&gt;flux.models.base.Model&lt;/code&gt;)" href="../providers/#flux.models.base.Model">Model</a> | None</code>
+            </td>
+            <td>
               <div class="doc-md-description">
                 <p>Optional model override.</p>
               </div>
-              <p>
-                  <span class="doc-param-annotation">
-                    <b>TYPE:</b>
-                      <code><a class="autorefs autorefs-internal" title="&lt;code class=&quot;doc-symbol doc-symbol-heading doc-symbol-class&quot;&gt;&lt;/code&gt;            &lt;span class=&quot;doc doc-object-name doc-class-name&quot;&gt;Model&lt;/span&gt; (&lt;code&gt;flux.models.base.Model&lt;/code&gt;)" href="../providers/#flux.models.base.Model">Model</a> | None</code>
-                  </span>
-                  <span class="doc-param-default">
-                    <b>DEFAULT:</b>
-                      <code>None</code>
-                  </span>
-              </p>
+            </td>
+            <td>
+                  <code>None</code>
             </td>
           </tr>
       </tbody>
     </table>
 
 
-<table>
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
       <thead>
         <tr>
-          <th><span class="doc-section-title">RETURNS</span></th>
-          <th><span>DESCRIPTION</span></th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
           <tr class="doc-section-item">
             <td>
-                <span class="doc-returns-annotation">
-                    <code><a class="autorefs autorefs-internal" title="&lt;code class=&quot;doc-symbol doc-symbol-heading doc-symbol-class&quot;&gt;&lt;/code&gt;            &lt;span class=&quot;doc doc-object-name doc-class-name&quot;&gt;RunResult&lt;/span&gt;
+                  <code><a class="autorefs autorefs-internal" title="&lt;code class=&quot;doc-symbol doc-symbol-heading doc-symbol-class&quot;&gt;&lt;/code&gt;            &lt;span class=&quot;doc doc-object-name doc-class-name&quot;&gt;RunResult&lt;/span&gt;
 
 
   &lt;span class=&quot;doc doc-labels&quot;&gt;
       &lt;small class=&quot;doc doc-label doc-label-dataclass&quot;&gt;&lt;code&gt;dataclass&lt;/code&gt;&lt;/small&gt;
   &lt;/span&gt; (&lt;code&gt;flux.runner.RunResult&lt;/code&gt;)" href="#flux.runner.RunResult">RunResult</a></code>
-                </span>
             </td>
-            <td class="doc-returns-details">
+            <td>
               <div class="doc-md-description">
                 <p>RunResult with the agent's final output.</p>
               </div>
